@@ -13,6 +13,9 @@ use Yii;
  * @property string $identity
  * @property int $user_id
  * @property string|null $date
+ * @property string|null $address
+ * @property string $phone
+ * @property int|null $foreign
  *
  * @property User $user
  * @property Reservation[] $reservations
@@ -33,10 +36,10 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'last_name', 'identity', 'user_id'], 'required'],
-            [['user_id'], 'integer'],
+            [['name', 'last_name', 'identity', 'user_id', 'phone'], 'required'],
+            [['user_id', 'foreign'], 'integer'],
             [['date'], 'safe'],
-            [['name', 'last_name', 'identity'], 'string', 'max' => 255],
+            [['name', 'last_name', 'identity', 'address', 'phone'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -53,6 +56,9 @@ class Client extends \yii\db\ActiveRecord
             'identity' => 'Identity',
             'user_id' => 'User ID',
             'date' => 'Date',
+            'address' => 'Address',
+            'phone' => 'Phone',
+            'foreign' => 'Foreign',
         ];
     }
 

@@ -91,7 +91,7 @@ class m200320_235843_new_tables_structures extends Migration
         $this->addForeignKey('client', '{{%reservation}}', 'client_id', '{{%client}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey('invoice', '{{%reservation}}', 'invoice_id', '{{%invoice}}', 'id', 'CASCADE', 'CASCADE');
 
-        $this->addForeignKey('type', '{{%room}}', 'type_id', '{{%invoice}}', 'id', 'CASCADE', 'CASCADE');
+        $this->addForeignKey('type', '{{%room}}', 'type_id', '{{%room_type}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey('status', '{{%room}}', 'status_id', '{{%room_status}}', 'id', 'CASCADE', 'CASCADE');
 
 

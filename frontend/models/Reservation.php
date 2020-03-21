@@ -16,6 +16,7 @@ use Yii;
  * @property int $status
  * @property string $starting_date
  * @property string $ending_date
+ * @property string $cod_register
  * @property string $created_at
  * @property string $updated_at
  *
@@ -43,6 +44,8 @@ class Reservation extends \yii\db\ActiveRecord
             [['room_id', 'client_id', 'pleople_count', 'invoice_id', 'user_id', 'status', 'starting_date', 'ending_date', 'created_at', 'updated_at'], 'required'],
             [['room_id', 'client_id', 'pleople_count', 'invoice_id', 'user_id', 'status'], 'integer'],
             [['starting_date', 'ending_date', 'created_at', 'updated_at'], 'safe'],
+            [['cod_register'], 'string', 'max' => 255],
+            [['cod_register'], 'unique'],
             [['client_id'], 'exist', 'skipOnError' => true, 'targetClass' => Client::className(), 'targetAttribute' => ['client_id' => 'id']],
             [['invoice_id'], 'exist', 'skipOnError' => true, 'targetClass' => Invoice::className(), 'targetAttribute' => ['invoice_id' => 'id']],
             [['room_id'], 'exist', 'skipOnError' => true, 'targetClass' => Room::className(), 'targetAttribute' => ['room_id' => 'id']],
@@ -65,6 +68,7 @@ class Reservation extends \yii\db\ActiveRecord
             'status' => 'Status',
             'starting_date' => 'Starting Date',
             'ending_date' => 'Ending Date',
+            'cod_register' => 'Cod Register',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

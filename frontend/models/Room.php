@@ -15,10 +15,12 @@ use Yii;
  * @property string|null $description
  * @property int $status_id
  * @property int $type_id
+ * @property int|null $share_bathroom
+ * @property string|null $imagen_url
  *
  * @property Reservation[] $reservations
  * @property RoomStatus $status
- * @property Invoice $type
+ * @property RoomType $type
  */
 class Room extends \yii\db\ActiveRecord
 {
@@ -37,10 +39,11 @@ class Room extends \yii\db\ActiveRecord
     {
         return [
             [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id'], 'required'],
-            [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id'], 'integer'],
+            [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id', 'share_bathroom'], 'integer'],
+            [['imagen_url'], 'string'],
             [['bed_description', 'description'], 'string', 'max' => 255],
             [['status_id'], 'exist', 'skipOnError' => true, 'targetClass' => RoomStatus::className(), 'targetAttribute' => ['status_id' => 'id']],
-            [['type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Invoice::className(), 'targetAttribute' => ['type_id' => 'id']],
+            [['type_id'], 'exist', 'skipOnError' => true, 'targetClass' => RoomType::className(), 'targetAttribute' => ['type_id' => 'id']],
         ];
     }
 
@@ -58,6 +61,8 @@ class Room extends \yii\db\ActiveRecord
             'description' => 'Description',
             'status_id' => 'Status ID',
             'type_id' => 'Type ID',
+            'share_bathroom' => 'Share Bathroom',
+            'imagen_url' => 'Imagen Url',
         ];
     }
 
@@ -88,6 +93,6 @@ class Room extends \yii\db\ActiveRecord
      */
     public function getType()
     {
-        return $this->hasOne(Invoice::className(), ['id' => 'type_id']);
+        return $this->hasOne(RoomType::className(), ['id' => 'type_id']);
     }
 }
