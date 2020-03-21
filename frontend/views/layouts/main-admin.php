@@ -24,28 +24,87 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <div class=" border-bottom shadow-sm">
-        <div class="container p-0 pt-3">
-            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white ">
-              <h5 class="my-0 mr-md-auto font-weight-normal">Panel de Administración</h5>
-              <nav class="my-2 my-md-0 mr-md-3">
-                <a class="p-2 text-dark" href="#">Features</a>
-                <a class="p-2 text-dark" href="#">Enterprise</a>
-                <a class="p-2 text-dark" href="#">Support</a>
-                <a class="p-2 text-dark" href="#">Pricing</a>
-              </nav>
-              <a class="btn btn-outline-primary" href="#">Sign up</a>
-            </div>
-        </div>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Panel de Administración</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="m-3 text-white">
+        token
     </div>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar pt-2" style="height: 90vh">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active text-dark" href="#">
+                  <i class="fas fa-home"></i>
+                  Inicio <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                  <i class="fas fa-user-friends"></i>
+                  Huéspedes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                  <i class="fas fa-building"></i>
+                  Habitaciones
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">
+                  <i class="fas fa-chart-pie"></i>
+                  Reportes
+                </a>
+              </li>
+              
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span class="font-weight-bold"> Reservaciones</span>
+              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                      <i class="fas fa-file-alt mr-2"></i>
+                      Crear reservación
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                      <i class="fas fa-file-alt mr-2"></i>
+                      Ver reservaciones
+                    </a>
+                  </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            
+          </div>
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </main>
+      </div>
     </div>
+
+   
 </div>
 
 <footer class="footer">
