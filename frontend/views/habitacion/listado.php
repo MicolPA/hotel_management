@@ -66,7 +66,7 @@
                     'value' => function ($data) {
                     	$ver = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/ver/?id=$data->id' title ='Ver Habitación'><i class='fas fa-eye'></i></a>";
                     	$edit = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/editar/?id=$data->id' title='Editar Habitación'><i class='fas fa-pencil-alt'></i></a>";
-                    	$delete = "<a class='btn btn-outline-danger btn-sm' href='/habitacion/borrar/?id=$data->id' title ='Eliminar Habitación' data-confirm='¿Estás seguro de que desea elimianr esta habitación?' data-pjax='0' data-method='post'><i class='fas fa-trash'></i></a>";
+                    	$delete = "<a class='btn btn-outline-danger btn-sm' href='/habitacion/eliminar/?id=$data->id' title ='Eliminar Habitación' data-confirm='¿Estás seguro de que desea elimianr esta habitación?' data-pjax='0' data-method='post'><i class='fas fa-trash'></i></a>";
 
                     	return "$ver $edit $delete";
                     },

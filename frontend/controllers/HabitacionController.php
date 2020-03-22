@@ -69,6 +69,17 @@ class HabitacionController extends \yii\web\Controller
         ]);
     }
 
+    public function actionEliminar($id){
+
+        if ($model = $this->findModel($id)) {
+            $model->delete();
+
+        }
+
+        Yii::$app->session->setFlash('success1', "Habitación eliminada correctamente");
+        return $this->redirect(['listado']);
+    }
+
     public function getExtras($model){
 
         $n = substr($model->room_number, -2);
