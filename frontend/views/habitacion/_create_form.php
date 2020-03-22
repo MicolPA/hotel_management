@@ -21,6 +21,7 @@ use yii\bootstrap\ActiveForm;
 	    <div class="col-md-6">
 	    	<?= $form->field($model, 'bed_description')->textInput(['required' => 'required'])->label('Descripción camas') ?>
 	    </div>
+	    <?php if (isset($title)): ?>
 	    <div class="col-md-6">
             <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control '])->label('Ocean View') ?>
 	    	
@@ -32,14 +33,15 @@ use yii\bootstrap\ActiveForm;
 	    <div class="col-md-6">
             <?= $form->field($model, 'street_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control ']) ?>
 	    	
-	    </div>
+	    </div>	
+	    <?php endif ?>
 	    <div class="col-md-6">
 	    	<?= $form->field($model, 'type_id')->dropDownList(
 	            \yii\helpers\ArrayHelper::map(\frontend\models\RoomType::find()->all(), 'id', 'name'),
 	            ['prompt'=>'Seleccionar...','class'=>'form-control '])->label("Tipo de Habitación") ?>
 	    </div>
 	    <?php if (!isset($title)): ?>
-	    <div class="col-md-12">
+	    <div class="col-md-6">
 	    	<label>Imagen</label>
 	    	<?= $form->field($model, 'imagen_url')->fileInput(['required' => 'required'])->label(false) ?>
 	    </div>

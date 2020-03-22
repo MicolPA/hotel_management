@@ -50,6 +50,8 @@ class HabitacionController extends \yii\web\Controller
                 $model->imagen_url->saveAs($imagen);
                 $model->imagen_url = $imagen;
 
+                $this->getExtras($model);
+
                 if ($model->save()) {
                     Yii::$app->session->setFlash('success1', "Habitación registrada correctamente");
                     return $this->redirect(['crear']);
@@ -65,6 +67,54 @@ class HabitacionController extends \yii\web\Controller
         return $this->render('create',[
         	'model' => $model,
         ]);
+    }
+
+    public function getExtras($model){
+
+        $n = substr($model->room_number, -2);
+        $n = (int)$n;
+        switch ($n) {
+            case 1:
+                $model->ocean_view = 1;
+                $model->street_view = 1;
+                $model->pool_view = 0;
+                $model->save();
+                break;
+
+            case $n == 2 OR $n == 3 OR $n == 4:
+                $model->ocean_view = 1;
+                $model->street_view = 0;
+                $model->pool_view = 0;
+                $model->save();
+                break; 
+
+            case $n == 5:
+                $model->ocean_view = 1;
+                $model->street_view = 0;
+                $model->pool_view = 1;
+                $model->save();
+                break;        
+
+            
+            case $n == 6 OR $n == 7 OR $n == 8 OR $n == 9:
+                $model->ocean_view = 0;
+                $model->street_view = 1;
+                $model->pool_view = 0;
+                $model->save();
+                break;   
+
+            case 10:
+                $model->ocean_view = 0;
+                $model->street_view = 1;
+                $model->pool_view = 1;
+                $model->save();
+                break;      
+            
+            default:
+                // code...
+                break;
+        }
+
     }
 
     public function actionListado(){

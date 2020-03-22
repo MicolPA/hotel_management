@@ -13,7 +13,7 @@ use yii\widgets\DetailView;
  </style>
 <div class="row">
 	<div class="col-md-12">
-		<h2 class="h2 font-weight-bold text-primary">Habitación #<?= $model->room_number ?></h2>
+		<h2 class="h2 font-weight-bold text-primary">Habitación #<?= $model->room_number ?> <a class='btn btn-pink mt-1' href="/habitacion/editar/?id=<?= $model->id ?>" title='Editar' style='float:right'>Editar</a></h2>
 		<hr>
 	</div>
 	<div class="col-md-12">
@@ -63,7 +63,7 @@ use yii\widgets\DetailView;
 	                    'label' => 'Ocean view',
 	                  	'attribute' => 'ocean_view',
 	                    'value' => function ($data) {
-	                    	return $data->share_bathroom==1?'Si':'No';
+	                    	return $data->ocean_view==1?'Si':'No';
 	                    },
 	                ],
 	                [
