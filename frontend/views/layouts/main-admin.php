@@ -35,7 +35,6 @@ AppAsset::register($this);
             </a>
             <div class="dropdown-menu mt-5" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Perfil</a>
-              <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/site/singuot">Cerrar Sesión </a>
             </div>
@@ -108,7 +107,7 @@ AppAsset::register($this);
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/habitacion/crear">
                       <i class="fas fa-bed"></i>
-                      Crear
+                      Registrar
                     </a>
                 </li>
                 <li class="nav-item">
@@ -134,7 +133,7 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer ">
     <div class="container">
         <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 

@@ -9,14 +9,14 @@ use yii\bootstrap\ActiveForm;
 
     <div class="row">
     	<div class="col-md-2">
-	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number'])->label('Capacidad de personas') ?>
+	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number'])->label('Capacidad de PAX') ?>
 	    </div>
 	    <div class="col-md-2">
 	    	<?= $form->field($model, 'bed')->textInput(['type' => 'number'])->label('Cantidad de camas') ?>
 	    </div>
 	    
 	    <div class="col-md-2">
-            <?= $form->field($model, 'share_bathroom')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), [])->label('Baño compartido') ?>
+            <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), [])->label('Ocean View') ?>
 	    	
 	    </div>
 	    <div class="col-md-2">
