@@ -92,6 +92,19 @@ class HabitacionController extends \yii\web\Controller
     	
     }
 
+    public function actionEditar($id){
+
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->session->setFlash('success1', "Cambios guardados correctamente");
+            return $this->redirect(['listado']);
+            
+        }
+        return $this->render('edit', [
+            'model' => $model,
+        ]);
+    }
+
     public function actionTipos(){
 
         $query = RoomType::find();

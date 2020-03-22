@@ -30,19 +30,22 @@ use yii\bootstrap\ActiveForm;
 	            \yii\helpers\ArrayHelper::map(\frontend\models\RoomType::find()->all(), 'id', 'name'),
 	            ['prompt'=>'Seleccionar...','class'=>'form-control select2'])->label("Tipo de Habitación") ?>
 	    </div>
-	    <div class="col-md-12">
-	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción de la habitación') ?>
-	    </div>
+	    <?php if (!isset($title)): ?>
 	    <div class="col-md-12">
 	    	<label>Imagen</label>
 	    	<?= $form->field($model, 'imagen_url')->fileInput(['required' => 'required'])->label(false) ?>
 	    </div>
+	    <?php endif ?>
+	    <div class="col-md-12">
+	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción de la habitación') ?>
+	    </div>
+	    
 
     	<input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 	    
 	    
-	    <div class="col-md-12 form-group">
-	        <?= Html::submitButton('Registrar Habitación', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+	    <div class="col-md-12 form-group text-right">
+	        <a href="<?= Yii::$app->request->referrer ?>" class="btn btn-pink mr-3">Cancelar</a> <?= Html::submitButton(isset($title)?"Guardar Cambios":"Registrar Habitación", ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
 	    </div>
     </div>
 
