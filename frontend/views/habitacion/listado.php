@@ -15,8 +15,11 @@
 		<?= GridView::widget([
             'dataProvider' => $dataProvider,
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-
+                //['class' => 'yii\grid\SerialColumn'],
+                [
+                  'label' => '#',
+                  'attribute' => 'room_number',
+                ],
                 [
                     'label' => 'Tipo',
                     'attribute' => 'type.name',
