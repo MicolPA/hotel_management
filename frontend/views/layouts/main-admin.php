@@ -110,10 +110,17 @@ AppAsset::register($this);
                       Registrar
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#">
                       <i class="fas fa-bed"></i>
                       Disponibles
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/habitacion/tipos">
+                      <i class="fas fa-bed"></i>
+                      Tipos de Hab.
                     </a>
                 </li>
             </ul>

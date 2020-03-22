@@ -40,7 +40,7 @@ use yii\widgets\DetailView;
 	                    },
 	                ],
 	                [
-	                  'label' => 'Capacidad Personas',
+	                  'label' => 'Capacidad de PAX',
 	                  'attribute' => 'people_capacity',
 	                ],
 	                [

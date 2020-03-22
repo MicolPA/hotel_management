@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property string $name
+ * @property string $description
+ *
+ * @property Room[] $rooms
  */
 class RoomType extends \yii\db\ActiveRecord
 {
@@ -27,6 +30,7 @@ class RoomType extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
+            [['description'], 'string'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -39,6 +43,17 @@ class RoomType extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'description' => 'Description',
         ];
+    }
+
+    /**
+     * Gets query for [[Rooms]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRooms()
+    {
+        return $this->hasMany(Room::className(), ['type_id' => 'id']);
     }
 }

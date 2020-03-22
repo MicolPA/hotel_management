@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use yii\filters\VerbFilter;
 use frontend\models\Room;
+use frontend\models\RoomType;
 use yii\web\UploadedFile;
 use yii\data\ActiveDataProvider;
 
@@ -91,6 +92,36 @@ class HabitacionController extends \yii\web\Controller
     	
     }
 
+    public function actionTipos(){
+
+        $query = RoomType::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $this->render('types', [
+            'dataProvider' => $dataProvider,
+        ]);
+        
+    }
+
+    public function actionEditarTipo($id){
+
+        $model = $this->findTypeModel($id);
+        if ($post = Yii::$app->request->post()) {
+            $model->load($post);
+            $model->save();
+            Yii::$app->session->setFlash('success1', "Habitación registrada correctamente");
+            return $this->redirect(['tipos']);
+
+        }
+
+        return $this->render('types-edit', [
+            'model' => $model,
+        ]);
+    }
+
     public function actionVer($id){
 
     	$model = $this->findModel($id);
@@ -100,6 +131,11 @@ class HabitacionController extends \yii\web\Controller
         ]);
     }
 
+    public function findTypeModel($id){
+
+        $model = RoomType::findOne($id);
+        return $model?$model:false;
+    }
 
     public function findModel($id){
 
