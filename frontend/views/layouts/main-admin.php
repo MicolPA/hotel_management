@@ -29,9 +29,9 @@ AppAsset::register($this);
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <?php if (!Yii::$app->user->isGuest): ?>
-               <?= Yii::$app->user->identity->username ?>   
-              <?php endif ?>
+                <?php if (!Yii::$app->user->isGuest): ?>
+                    <?= Yii::$app->user->identity->username ?>   
+                <?php endif ?>
             </a>
             <div class="dropdown-menu mt-5" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Perfil</a>
