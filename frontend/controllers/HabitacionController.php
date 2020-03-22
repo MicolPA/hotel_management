@@ -46,7 +46,7 @@ class HabitacionController extends \yii\web\Controller
 
                 $model->save();
                 $model->imagen_url = UploadedFile::getInstance($model, 'imagen_url');
-                $imagen = "images/room/" . $model->type->name . "-$model->id." . $model->imagen_url->extension;
+                $imagen = "images/room/" . strtolower($model->type->name) . "-$model->id." . $model->imagen_url->extension;
                 $model->imagen_url->saveAs($imagen);
                 $model->imagen_url = $imagen;
 

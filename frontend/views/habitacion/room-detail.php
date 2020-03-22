@@ -2,6 +2,15 @@
 use yii\widgets\DetailView;
 
  ?>
+ <style>
+ 	.swal-modal{
+ 		width: 50% !important;
+ 	}
+
+ 	.swal-modal img{
+		width: 100% !important;
+ 	}
+ </style>
 <div class="row">
 	<div class="col-md-12">
 		<h2 class="h2 font-weight-bold text-primary">Habitación #<?= $model->room_number ?></h2>
@@ -61,6 +70,26 @@ use yii\widgets\DetailView;
 	                    	return $data->share_bathroom==1?'Si':'No';
 	                    },
 	                ],
+	                [
+	                  	'attribute' => 'street_view',
+	                    'value' => function ($data) {
+	                    	return $data->street_view==1?'Si':'No';
+	                    },
+	                ],
+	                [
+	                  	'attribute' => 'pool_view',
+	                    'value' => function ($data) {
+	                    	return $data->pool_view==1?'Si':'No';
+	                    },
+	                ],
+	                [
+	                    'label' => 'Foto',
+	                  	'attribute' => 'imagen_url',
+	                  	'format' => 'raw',
+	                    'value' => function ($data) {
+	                    	return "<a href='javascript:getImagen()' class='btn btn-primary btn-sm text-white'>Ver Imagen</a>";
+	                    },
+	                ],
 
 	                [
 	                  'label' => 'Descripción',
@@ -70,8 +99,23 @@ use yii\widgets\DetailView;
             ]) ?>
 	</div>
 
+	<input type="hidden" id="img" value="<?= $model->imagen_url ?>">
+
 	<div class="col-md-6" style="background-image: url(/frontend/web/<?= $model->imagen_url; ?>);background-repeat: no-repeat;height: 500px !important;display: none">
 	</div>
 
 	
 </div>
+
+<script>
+	function getImagen(){
+		url = $("#img").val();
+		url = "/frontend/web/"+url;
+		console.log(url);
+		swal({
+            title: "",
+            text: '',
+            icon: url,
+          });
+	}
+</script>
