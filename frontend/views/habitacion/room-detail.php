@@ -60,10 +60,6 @@ use yii\widgets\DetailView;
 	                  'attribute' => 'bed_description',
 	                ],
 	                [
-	                  'label' => 'Cant. Baños',
-	                  'attribute' => 'bathroom',
-	                ],
-	                [
 	                    'label' => 'Ocean view',
 	                  	'attribute' => 'ocean_view',
 	                    'value' => function ($data) {
@@ -110,7 +106,7 @@ use yii\widgets\DetailView;
 <script>
 	function getImagen(){
 		url = $("#img").val();
-		url = "/frontend/web/"+url;
+		// url = "/frontend/web/"+url;
 		console.log(url);
 		swal({
             title: "",
