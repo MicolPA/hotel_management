@@ -17,7 +17,7 @@ use yii\widgets\DetailView;
 		<hr>
 	</div>
 	<div class="col-md-6">
-		<img src="/frontend/web/<?= $model->imagen_url ?>" width='100%'>
+		<img src="/<?= $model->imagen_url ?>" width='100%'>
 		<div class="mt-2">
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Descripción</span>
