@@ -96,6 +96,7 @@ class HabitacionController extends \yii\web\Controller
 
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) {
+            $model->save();
             Yii::$app->session->setFlash('success1', "Cambios guardados correctamente");
             return $this->redirect(['listado']);
             
