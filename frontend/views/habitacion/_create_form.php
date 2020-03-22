@@ -9,10 +9,10 @@ use yii\bootstrap\ActiveForm;
 
     <div class="row">
     	<div class="col-md-6">
-	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number', 'required' => 'required'])->label('Capacidad de PAX') ?>
-	    </div>
-	    <div class="col-md-6">
 	    	<?= $form->field($model, 'room_number')->textInput(['type' => 'number', 'id' => 'hab_number', 'required' => 'required'])->label('Número de hab.') ?>
+	    </div>
+    	<div class="col-md-6">
+	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number', 'required' => 'required'])->label('Capacidad de PAX') ?>
 	    </div>
 	    <div class="col-md-6">
 	    	<?= $form->field($model, 'bed')->textInput(['type' => 'number', 'required' => 'required'])->label('Cantidad de camas') ?>
