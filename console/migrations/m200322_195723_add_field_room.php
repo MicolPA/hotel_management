@@ -14,7 +14,6 @@ class m200322_195723_add_field_room extends Migration
     {
 
         // $this->addColumn('{{%room}}', 'room_number', $this->integer()->notNull());
-        $this->addColumn('{{%room_type}}', 'description', $this->text()->notNull());
         $this->addColumn('{{%room}}', 'pool_view', $this->integer()->defaultValue(0));
         $this->addColumn('{{%room}}', 'street_view', $this->integer()->defaultValue(0));
     }
