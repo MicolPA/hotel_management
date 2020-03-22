@@ -107,12 +107,11 @@ use yii\widgets\DetailView;
 	function getImagen(){
 		url = $("#img").val();
 		// url = "/frontend/web/"+url;
-		url "/"+url;
 		console.log(url);
 		swal({
             title: "",
             text: '',
-            icon: url,
+            icon: '/'+url,
           });
 	}
 </script>
