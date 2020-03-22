@@ -4,7 +4,7 @@ use yii\widgets\DetailView;
  ?>
 <div class="row">
 	<div class="col-md-12">
-		<h2 class="h2 font-weight-light">Habitación</h2>
+		<h2 class="h2 font-weight-bold text-primary">Habitación #<?= $model->room_number ?></h2>
 		<hr>
 	</div>
 	<div class="col-md-12">
@@ -12,8 +12,15 @@ use yii\widgets\DetailView;
                 'model' => $model,
                 'attributes' => [
                     [
-	                  'label' => 'Tipo',
-	                  'attribute' => 'type.name',
+	                    'label' => 'Tipo',
+	                    'attribute' => 'type.name',
+	                    'value' => function ($data) {
+	                        if ($data->ocean_view == 1) {
+	                            return $data->type->name." Ocean View";
+	                        }else{
+	                            return $data->type->name;
+	                        }
+	                    },
 	                ],
 	                [
 	                    'label' => 'Status',
@@ -56,6 +63,7 @@ use yii\widgets\DetailView;
 	                ],
 
 	                [
+	                  'label' => 'Descripción',
 	                  'attribute' => 'description',
 	                ],
                 ],

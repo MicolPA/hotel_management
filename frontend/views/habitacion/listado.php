@@ -6,7 +6,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h2 class="h2 font-weight-light">Listado de Habitaciones</h2>
+		<h2 class="h2 font-weight-bold text-primary">Listado de Habitaciones</h2>
 		<hr>
 	</div>
 
@@ -18,8 +18,15 @@
                 ['class' => 'yii\grid\SerialColumn'],
 
                 [
-                  'label' => 'Tipo',
-                  'attribute' => 'type.name',
+                    'label' => 'Tipo',
+                    'attribute' => 'type.name',
+                    'value' => function ($data) {
+                        if ($data->ocean_view == 1) {
+                            return $data->type->name." Ocean View";
+                        }else{
+                            return $data->type->name;
+                        }
+                    },
                 ],
                 [
                   'label' => 'Capacidad Personas',
@@ -33,7 +40,7 @@
                     'label' => 'Ocean view',
                   	'attribute' => 'ocean_view',
                     'value' => function ($data) {
-                    	return $data->share_bathroom==1?'Si':'No';
+                    	return $data->ocean_view==1?'Si':'No';
                     },
                 ],
                 [

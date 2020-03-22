@@ -52,25 +52,25 @@ AppAsset::register($this);
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active text-dark" href="#">
-                  <i class="fas fa-home"></i>
+                  <i class="fas fa-home text-pink"></i>
                   Inicio <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-dark" href="#">
-                  <i class="fas fa-user-friends"></i>
+                  <i class="fas fa-user-friends text-pink"></i>
                   Huéspedes
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-dark" href="/habitacion/listado">
-                  <i class="fas fa-building"></i>
+                  <i class="fas fa-building text-pink"></i>
                   Habitaciones
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-dark" href="#">
-                  <i class="fas fa-chart-pie"></i>
+                  <i class="fas fa-chart-pie text-pink"></i>
                   Reportes
                 </a>
               </li>
@@ -78,7 +78,7 @@ AppAsset::register($this);
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span class="font-weight-bold"> Reservaciones</span>
+              <span class="font-weight-bold text-primary"> Reservaciones</span>
               <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
                 <span data-feather="plus-circle"></span>
               </a>
@@ -98,7 +98,7 @@ AppAsset::register($this);
                   </li>
             </ul>
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span class="font-weight-bold"> Habitaciones</span>
+              <span class="font-weight-bold text-primary"> Habitaciones</span>
               <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
                 <span data-feather="plus-circle"></span>
               </a>

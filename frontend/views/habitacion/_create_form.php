@@ -9,17 +9,17 @@ use yii\bootstrap\ActiveForm;
 
     <div class="row">
     	<div class="col-md-6">
-	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number'])->label('Capacidad de personas') ?>
+	    	<?= $form->field($model, 'people_capacity')->textInput(['type' => 'number', 'required' => 'required'])->label('Capacidad de personas') ?>
 	    </div>
 	    <div class="col-md-6">
-	    	<?= $form->field($model, 'bathroom')->textInput(['type' => 'number'])->label('Cantidad de Baños') ?>
+	    	<?= $form->field($model, 'room_number')->textInput(['type' => 'number', 'id' => 'hab_number', 'required' => 'required'])->label('Número de hab.') ?>
 	    </div>
 	    <div class="col-md-6">
-	    	<?= $form->field($model, 'bed')->textInput(['type' => 'number'])->label('Cantidad de camas') ?>
+	    	<?= $form->field($model, 'bed')->textInput(['type' => 'number', 'required' => 'required'])->label('Cantidad de camas') ?>
 	    </div>
 	    
 	    <div class="col-md-6">
-	    	<?= $form->field($model, 'bed_description')->textInput([])->label('Descripción camas') ?>
+	    	<?= $form->field($model, 'bed_description')->textInput(['required' => 'required'])->label('Descripción camas') ?>
 	    </div>
 	    <div class="col-md-6">
             <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control select2'])->label('Ocean View') ?>
@@ -31,11 +31,11 @@ use yii\bootstrap\ActiveForm;
 	            ['prompt'=>'Seleccionar...','class'=>'form-control select2'])->label("Tipo de Habitación") ?>
 	    </div>
 	    <div class="col-md-12">
-	    	<?= $form->field($model, 'description')->textarea(['rows' => 4])->label('Descripción de la habitación') ?>
+	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción de la habitación') ?>
 	    </div>
 	    <div class="col-md-12">
 	    	<label>Imagen</label>
-	    	<?= $form->field($model, 'imagen_url')->fileInput()->label(false) ?>
+	    	<?= $form->field($model, 'imagen_url')->fileInput(['required' => 'required'])->label(false) ?>
 	    </div>
 
     	<input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />

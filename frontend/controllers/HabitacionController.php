@@ -37,18 +37,27 @@ class HabitacionController extends \yii\web\Controller
 
     	if ($model->load($post)) {
     		
-    		$model->status_id = 1;
+            if (Room::find()->where(['room_number' => $model->room_number])->one()) {
+                Yii::$app->session->setFlash('fail1', "Ya existe una Habitación con este número");
+            }else{
 
-    		$model->save();
-    		$model->imagen_url = UploadedFile::getInstance($model, 'imagen_url');
-            $imagen = "images/room/" . $model->type->name . "-$model->id." . $model->imagen_url->extension;
-            $model->imagen_url->saveAs($imagen);
-            $model->imagen_url = $imagen;
+                $model->status_id = 1;
 
-            if ($model->save()) {
-            	Yii::$app->session->setFlash('success1', "Habitación registrada correctamente");
-            	return $this->redirect(['crear']);
+                $model->save();
+                $model->imagen_url = UploadedFile::getInstance($model, 'imagen_url');
+                $imagen = "images/room/" . $model->type->name . "-$model->id." . $model->imagen_url->extension;
+                $model->imagen_url->saveAs($imagen);
+                $model->imagen_url = $imagen;
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success1', "Habitación registrada correctamente");
+                    return $this->redirect(['crear']);
+                }else{
+                }
+                    print_r($model->errors);
+
             }
+    		
 
     	}
 
@@ -70,7 +79,7 @@ class HabitacionController extends \yii\web\Controller
               ->andFilterWhere(['bed' => $model['bed']])
               ->andFilterWhere(['type_id' => $model['type_id']])
               ->andFilterWhere(['status_id' => $model['status_id']])
-              ->andFilterWhere(['share_bathroom' => $model['share_bathroom']]);
+              ->andFilterWhere(['ocean_view' => $model['ocean_view']]);
         }
 
         $dataProvider = $this->getDataProvider($query);
