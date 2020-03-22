@@ -5,7 +5,7 @@ use yii\bootstrap\ActiveForm;
 
 ?>
 
-<?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
+<?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'on'],], ['enctype' => 'multipart/form-data']); ?>
 
     <div class="row">
     	<div class="col-md-6">
