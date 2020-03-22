@@ -22,9 +22,8 @@ use yii\bootstrap\ActiveForm;
 	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción de la habitación') ?>
 	    </div>
     	<input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-	    
-	    <div class="col-md-12 form-group">
-	        <?= Html::submitButton('Guardar Cambios', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+	    <div class="col-md-12 form-group text-right">
+	        <a href="/habitacion/tipos" class="btn btn-pink mr-3">Cancelar</a> <?= Html::submitButton('Guardar Cambios', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
 	    </div>
     </div>
 

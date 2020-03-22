@@ -112,7 +112,7 @@ class HabitacionController extends \yii\web\Controller
         if ($post = Yii::$app->request->post()) {
             $model->load($post);
             $model->save();
-            Yii::$app->session->setFlash('success1', "Habitación registrada correctamente");
+            Yii::$app->session->setFlash('success1', "Cambios guardados correctamente");
             return $this->redirect(['tipos']);
 
         }

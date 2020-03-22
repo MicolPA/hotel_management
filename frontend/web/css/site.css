@@ -122,3 +122,13 @@ a.desc:after {
 .text-pink{
     color: #f67575;
 }
+
+.btn-pink{
+    background: #f67575 !important;
+    color: white !important;
+}
+
+.bg-pink{
+    background: #f67575 !important;
+}
+
