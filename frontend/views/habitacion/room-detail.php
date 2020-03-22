@@ -21,7 +21,7 @@ use yii\widgets\DetailView;
 		<div class="mt-2">
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Descripción</span>
-			<p class="h4 font-weight-light"><?= $model->description; ?></p>
+			<p class="h5 font-weight-light"><?= $model->description; ?></p>
 		</div>
 		</div>
 	</div>
@@ -29,26 +29,26 @@ use yii\widgets\DetailView;
 		
 		<div>
 			<span class="font-weight-bold h5 text-primary">Tipo</span>
-			<p class="h4 font-weight-light"><?= $model->ocean_view==0?$model->type->name:$model->type->name." Ocean View" ?></p>
+			<p class="h5 font-weight-light"><?= $model->ocean_view==0?$model->type->name:$model->type->name." Ocean View" ?></p>
 		</div>
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Status</span>
-			<p class="h4 font-weight-light"><?= $model->status->name; ?></p>
+			<p class="h5 font-weight-light"><?= $model->status->name; ?></p>
 		</div>
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Capacidad de PAX</span>
-			<p class="h4 font-weight-light"><?= $model->people_capacity; ?> Persona(s)</p>
+			<p class="h5 font-weight-light"><?= $model->people_capacity; ?> Persona(s)</p>
 		</div>
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Cant. de Camas</span>
-			<p class="h4 font-weight-light"><?= $model->bed; ?> Cama(s)</p>
+			<p class="h5 font-weight-light"><?= $model->bed; ?> Cama(s)</p>
 		</div>
 		<div class="mt-4">
 			<span class="font-weight-bold h5 text-primary">Descripción de Camas</span>
-			<p class="h4 font-weight-light"><?= $model->bed_description; ?></p>
+			<p class="h5 font-weight-light"><?= $model->bed_description; ?></p>
 		</div>
 		<div class="mt-4">
-			<span class="font-weight-bold h5 text-primary">Vistas</span><br><br>
+			<span class="font-weight-bold h5 text-primary">Características</span><br><br>
 			<?php if ($model->ocean_view == 1): ?>
 				<span class="h6 font-weight-light rounded border border-primary pt-1 pb-1 pl-2 pr-2 mr-2"><i class="fas fa-water text-primary"></i> Ocean View</span>
 			<?php endif ?>
@@ -58,6 +58,10 @@ use yii\widgets\DetailView;
 			<?php if ($model->street_view == 1): ?>
 			<span class="h6 font-weight-light rounded pt-1 pb-1 pl-2 pr-2" style="border:1px solid #f67575"><i class="fas fa-city text-pink"></i> Street View</span>	
 			<?php endif ?>
+
+			<?php foreach ($feactures as $things): ?>
+			<div class="h6 font-weight-light rounded pt-1 pb-1 pl-2 pr-2" style="border:1px solid #f67575;width: fit-content;display: inline-block;"><?= $things ?></div>	
+			<?php endforeach ?>
 		</div>
 
 	</div>

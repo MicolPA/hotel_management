@@ -200,9 +200,11 @@ class HabitacionController extends \yii\web\Controller
     public function actionVer($id){
 
     	$model = $this->findModel($id);
+        $feactures = explode(',', $model->type->description);
 
     	return $this->render('room-detail', [
             'model' => $model,
+            'feactures' => $feactures,
         ]);
     }
 
