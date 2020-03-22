@@ -3,6 +3,7 @@
     use yii\grid\GridView;
 
  ?>
+
 <div class="row">
 	<div class="col-md-12">
 		<h2 class="h2 font-weight-light">Listado de Habitaciones</h2>
@@ -29,8 +30,8 @@
                   'attribute' => 'bed',
                 ],
                 [
-                    'label' => 'Baño compartido',
-                  	'attribute' => 'share_bathroom',
+                    'label' => 'Ocean view',
+                  	'attribute' => 'ocean_view',
                     'value' => function ($data) {
                     	return $data->share_bathroom==1?'Si':'No';
                     },
@@ -42,6 +43,7 @@
                 [
                     'format'=>'html',
                     'label' => '',
+                    'visible' => false,
                     'class' => 'yii\grid\DataColumn', 
                     'value' => function ($data) {
                     	if ($data->status_id == 1) {
@@ -50,7 +52,20 @@
                     },
                 ],
 
-                //['class' => 'yii\grid\ActionColumn'],
+                [
+                    'format'=>'html',
+                    'label' => '',
+                    'class' => 'yii\grid\DataColumn', 
+                    'value' => function ($data) {
+                    	$ver = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/ver/?id=$data->id' title ='Ver Habitación'><i class='fas fa-eye'></i></a>";
+                    	$edit = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/editar/?id=$data->id' title='Editar Habitación'><i class='fas fa-pencil-alt'></i></a>";
+                    	$delete = "<a class='btn btn-outline-danger btn-sm' href='/habitacion/borrar/?id=$data->id' title ='Eliminar Habitación' data-confirm='¿Estás seguro de que desea elimianr esta habitación?' data-pjax='0' data-method='post'><i class='fas fa-trash'></i></a>";
+
+                    	return "$ver $edit $delete";
+                    },
+                ],
+
+                // ['class' => 'yii\grid\ActionColumn'],
             ],
         ]); ?>
 	</div>

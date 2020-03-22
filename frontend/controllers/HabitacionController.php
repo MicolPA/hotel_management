@@ -73,17 +73,40 @@ class HabitacionController extends \yii\web\Controller
               ->andFilterWhere(['share_bathroom' => $model['share_bathroom']]);
         }
 
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'sort'=> ['defaultOrder' => ['id' => 'ASC']],
-            'pagination'=>['pageSize' => '60'],
-        ]);
+        $dataProvider = $this->getDataProvider($query);
 
         return $this->render('listado', [
             'dataProvider' => $dataProvider,
             'model' => $model,
         ]);
     	
+    }
+
+    public function actionVer($id){
+
+    	$model = $this->findModel($id);
+
+    	return $this->render('room-detail', [
+            'model' => $model,
+        ]);
+    }
+
+
+    public function findModel($id){
+
+    	$model = Room::findOne($id);
+    	return $model?$model:false;
+    }
+
+    public function getDataProvider($query){
+    	
+    	$dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=> ['defaultOrder' => ['id' => 'ASC']],
+            'pagination'=>['pageSize' => '60'],
+        ]);
+
+        return $dataProvider;
     }
 
 }

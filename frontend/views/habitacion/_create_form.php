@@ -22,7 +22,7 @@ use yii\bootstrap\ActiveForm;
 	    	<?= $form->field($model, 'bed_description')->textInput([])->label('Descripción camas') ?>
 	    </div>
 	    <div class="col-md-6">
-            <?= $form->field($model, 'share_bathroom')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control select2'])->label('Baño compartido') ?>
+            <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control select2'])->label('Ocean View') ?>
 	    	
 	    </div>
 	    <div class="col-md-6">
