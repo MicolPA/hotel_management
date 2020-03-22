@@ -19,6 +19,8 @@ use Yii;
  * @property string|null $imagen_url
  * @property int|null $ocean_view
  * @property int|null $room_number
+ * @property int|null $pool_view
+ * @property int|null $street_view
  *
  * @property Reservation[] $reservations
  * @property RoomStatus $status
@@ -41,7 +43,7 @@ class Room extends \yii\db\ActiveRecord
     {
         return [
             [['people_capacity', 'bed', 'status_id', 'type_id'], 'required'],
-            [['people_capacity', 'bed', 'status_id', 'type_id', 'share_bathroom', 'ocean_view', 'room_number'], 'integer'],
+            [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id', 'share_bathroom', 'ocean_view', 'room_number', 'pool_view', 'street_view'], 'integer'],
             [['imagen_url'], 'string'],
             [['bed_description', 'description'], 'string', 'max' => 255],
             [['status_id'], 'exist', 'skipOnError' => true, 'targetClass' => RoomStatus::className(), 'targetAttribute' => ['status_id' => 'id']],
@@ -67,6 +69,8 @@ class Room extends \yii\db\ActiveRecord
             'imagen_url' => 'Imagen Url',
             'ocean_view' => 'Ocean View',
             'room_number' => 'Room Number',
+            'pool_view' => 'Pool View',
+            'street_view' => 'Street View',
         ];
     }
 

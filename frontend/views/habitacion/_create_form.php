@@ -22,13 +22,21 @@ use yii\bootstrap\ActiveForm;
 	    	<?= $form->field($model, 'bed_description')->textInput(['required' => 'required'])->label('Descripción camas') ?>
 	    </div>
 	    <div class="col-md-6">
-            <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control select2'])->label('Ocean View') ?>
+            <?= $form->field($model, 'ocean_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control '])->label('Ocean View') ?>
+	    	
+	    </div>
+	    <div class="col-md-6">
+            <?= $form->field($model, 'pool_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control ']) ?>
+	    	
+	    </div>
+	    <div class="col-md-6">
+            <?= $form->field($model, 'street_view')->dropdownList(array(''=>'Seleccionar',0=>'No', 1=>'Si'), ['class'=>'form-control ']) ?>
 	    	
 	    </div>
 	    <div class="col-md-6">
 	    	<?= $form->field($model, 'type_id')->dropDownList(
 	            \yii\helpers\ArrayHelper::map(\frontend\models\RoomType::find()->all(), 'id', 'name'),
-	            ['prompt'=>'Seleccionar...','class'=>'form-control select2'])->label("Tipo de Habitación") ?>
+	            ['prompt'=>'Seleccionar...','class'=>'form-control '])->label("Tipo de Habitación") ?>
 	    </div>
 	    <?php if (!isset($title)): ?>
 	    <div class="col-md-12">
