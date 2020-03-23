@@ -15,6 +15,7 @@ class HabitacionController extends \yii\web\Controller
 
 	public function behaviors()
     {
+        $this->checkLogin();
         $this->layout = '@app/views/layouts/main-admin';
         $user = Yii::$app->user->identity;;
         return [
@@ -26,6 +27,14 @@ class HabitacionController extends \yii\web\Controller
             ],
         ];
     }
+
+
+    public function checkLogin(){
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['/site']);
+        }
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

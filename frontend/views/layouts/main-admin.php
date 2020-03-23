@@ -36,7 +36,7 @@ AppAsset::register($this);
             <div class="dropdown-menu mt-5" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Perfil</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/site/singuot">Cerrar Sesión </a>
+              <a class="dropdown-item" href="/site/logout">Cerrar Sesión </a>
             </div>
         </li>
       </ul>
