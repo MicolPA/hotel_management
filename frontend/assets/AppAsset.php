@@ -12,7 +12,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css?v=2',
+        'css/site.css?v=3',
         'css/bootstrap.min.css?v=1',
         'css/fontawesome.min.css',
         'css/select2.min.css',
@@ -25,7 +25,7 @@ class AppAsset extends AssetBundle
         'js/jquery.min.js',
         'js/select2.min.js',
         'js/sweetalert.min.js',
-        'js/main.js',
+        'js/main.js?v=1',
         'js/calendar.js',
     ];
     public $depends = [

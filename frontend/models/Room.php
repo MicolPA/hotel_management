@@ -42,7 +42,7 @@ class Room extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['people_capacity', 'bed', 'status_id', 'type_id'], 'required'],
+            [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id'], 'required'],
             [['people_capacity', 'bed', 'bathroom', 'status_id', 'type_id', 'share_bathroom', 'ocean_view', 'room_number', 'pool_view', 'street_view'], 'integer'],
             [['imagen_url'], 'string'],
             [['bed_description', 'description'], 'string', 'max' => 255],

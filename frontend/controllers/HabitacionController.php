@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use frontend\models\Room;
 use frontend\models\RoomType;
+use frontend\models\Services;
 use yii\web\UploadedFile;
 use yii\data\ActiveDataProvider;
 
@@ -238,6 +239,63 @@ class HabitacionController extends \yii\web\Controller
         ]);
 
         return $dataProvider;
+    }
+
+    public function actionServicios(){
+
+        $query = Services::find();
+
+        $dataProvider = $this->getDataProvider($query);
+
+        return $this->render('services', [
+            'dataProvider' => $dataProvider,
+        ]);
+
+    }
+
+    public function actionCrearServicio(){
+
+        $model = new Services();
+        
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $model->price = $post['price'];
+            $model->created_at = date("Y-m-d H:i:s");
+
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success1', "Sericio $model->name creado correctamente");
+                return $this->redirect(['servicios']);
+            }else{
+                Yii::$app->session->setFlash('fail1', "Se ha producido un error");
+                // print_r($model->errors);
+                // exit();
+            }
+            
+        }
+
+        return $this->render('create_service', [
+            'title' => 'Crear Servicio',
+            'model' => $model,
+        ]);
+    }
+
+    public function actionEditarServicio($id){
+
+        $model = Services::findOne($id);
+        $post = Yii::$app->request->post();
+        
+        if ($model->load($post)) {
+            $model->price = $post['price'];
+            $model->save();
+            $model->updated_at = date("Y-m-d H:i:s");
+            Yii::$app->session->setFlash('success1', "Cambios guardados correctamente");
+            return $this->redirect(['servicios']);
+            
+        }
+        return $this->render('create_service', [
+            'title' => 'Editar Servicio',
+            'model' => $model,
+        ]);
     }
 
 }

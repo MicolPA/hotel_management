@@ -59,7 +59,6 @@ use yii\bootstrap\ActiveForm;
 			<div class="row">
 				<div class="col-md-10"></div>
 				<div class="col-md-2">
-					<label>Total</label>
 					<input type="text" class="form-control">
 				</div>
 			</div>

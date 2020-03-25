@@ -15,8 +15,14 @@ use yii\bootstrap\ActiveForm;
 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],]); ?>
 
     <div class="row">
-    	<div class="col-md-12">
+    	<div class="col-md-4">
 	    	<?= $form->field($model, 'name')->textInput(['required' => 'required'])->label('Tipo de Habitación') ?>
+	    </div>
+	    <div class="col-md-4">
+	    	<?= $form->field($model, 'initials')->textInput(['required' => 'required'])->label('Siglas') ?>
+	    </div>
+	    <div class="col-md-4">
+	    	<?= $form->field($model, 'price_per_night')->textInput(['required' => 'required'])->label('Precio por Noche') ?>
 	    </div>
 	    <div class="col-md-12">
 	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción de la habitación') ?>

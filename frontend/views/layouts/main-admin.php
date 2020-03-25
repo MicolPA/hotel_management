@@ -51,9 +51,15 @@ AppAsset::register($this);
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active text-dark" href="#">
+                <a class="nav-link active text-dark" href="/reports/rack">
                   <i class="fas fa-home text-pink"></i>
                   Inicio <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/habitacion/servicios">
+                  <i class="fas fa-concierge-bell text-pink"></i>
+                  Servicios
                 </a>
               </li>
               <li class="nav-item">
@@ -62,14 +68,9 @@ AppAsset::register($this);
                   Huéspedes
                 </a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link text-dark" href="/habitacion/listado">
-                  <i class="fas fa-building text-pink"></i>
-                  Habitaciones
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
+                <a class="nav-link text-dark" href="/reports/rack">
                   <i class="fas fa-chart-pie text-pink"></i>
                   Reportes
                 </a>
@@ -79,41 +80,41 @@ AppAsset::register($this);
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span class="font-weight-bold text-primary"> Reservaciones</span>
-              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                <span data-feather="plus-circle"></span>
-              </a>
             </h6>
             <ul class="nav flex-column mb-2">
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/reservacion/crear">
-                      <i class="fas fa-file-alt mr-2"></i>
+                      <i class="fas fa-circle fa-sm text-primary"></i>
                       Hacer reservación
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-dark" href="#">
-                      <i class="fas fa-file-alt mr-2"></i>
+                      <i class="fas fa-circle fa-sm text-primary"></i>
                       Ver reservaciones
                     </a>
                   </li>
             </ul>
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span class="font-weight-bold text-primary"> Habitaciones</span>
-              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                <span data-feather="plus-circle"></span>
-              </a>
             </h6>
             <ul class="nav flex-column mb-2">
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/habitacion/crear">
-                      <i class="fas fa-bed"></i>
+                      <i class="fas fa-circle fa-sm text-primary"></i>
                       Registrar
                     </a>
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link text-dark" href="/habitacion/listado">
+                      <i class="fas fa-circle fa-sm text-primary"></i>
+                      Ver Listado
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-dark" href="/habitacion/tipos">
-                      <i class="fas fa-bed"></i>
+                      <i class="fas fa-circle fa-sm text-primary"></i>
                       Tipos de Hab.
                     </a>
                 </li>

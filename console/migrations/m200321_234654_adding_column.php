@@ -12,6 +12,9 @@ class m200321_234654_adding_column extends Migration
      */
     public function safeUp()
     {
+         // $this->addColumn('{{%room}}', 'room_number', $this->integer()->notNull());
+        $this->addColumn('{{%room}}', 'pool_view', $this->integer()->defaultValue(0));
+        $this->addColumn('{{%room}}', 'street_view', $this->integer()->defaultValue(0));
         $this->addColumn('{{%room}}', 'ocean_view', $this->integer()->defaultValue(0));
 
     }

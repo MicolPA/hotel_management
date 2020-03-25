@@ -9,7 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property string $name
- * @property string $description
+ * @property string|null $description
+ * @property string|null $initials
+ * @property int|null $price_per_night
  *
  * @property Room[] $rooms
  */
@@ -31,7 +33,8 @@ class RoomType extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['description'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['price_per_night'], 'integer'],
+            [['name', 'initials'], 'string', 'max' => 255],
         ];
     }
 
@@ -42,8 +45,10 @@ class RoomType extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
+            'name' => 'Tipo',
+            'description' => 'Descripción',
+            'initials' => 'Siglas',
+            'price_per_night' => 'P/P/N',
         ];
     }
 

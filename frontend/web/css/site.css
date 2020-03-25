@@ -135,4 +135,13 @@ a.desc:after {
 .boder-pink{
     border-color: #f67575;
 }
+.myTooltip{
+    width: 200px;
+    height: 100px;
+    display: none;
+    z-index: 10;
+    position: absolute;
+    left: 100px;
+    top:0px
+}
 

@@ -183,4 +183,20 @@ function addReserva(n){
 	// $(div_total).append(label_total);
 	$(div_total).append(input_total);
 
+	n = n + 1;
+	$("#btn-reserva").attr('href', 'javascript:addReserva('+n+')');
+
 }
+
+setTimeout(function(){
+	$(".show").mouseenter(function(){
+		id = $(this).attr('id');
+		$("."+id).show();
+		console.log();
+	});
+	$(".show").mouseleave(function(){
+		id = $(this).attr('id');
+		$("."+id).hide();
+		console.log();
+	});
+},500);

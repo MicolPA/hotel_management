@@ -1,12 +1,14 @@
 <?php 
     use yii\widgets\ActiveForm;
     use yii\grid\GridView;
-
  ?>
 
 <div class="row">
 	<div class="col-md-12">
-		<h2 class="h2 font-weight-bold text-primary">Tipos de Habitaciones</h2>
+		<h2 class="h2 font-weight-bold text-primary">
+			Servicios
+			<a href="/habitacion/crear-servicio" class="btn btn-primary float-right">Crear servicio</a>
+		</h2>
 		<hr>
 	</div>
 
@@ -17,7 +19,6 @@
                 ['class' => 'yii\grid\SerialColumn'],
 
                 [
-                    'label' => 'Tipo',
                     'attribute' => 'name',
                 ],
                 [
@@ -25,12 +26,8 @@
                   'attribute' => 'description',
                 ],
                 [
-                  'label' => 'Siglas',
-                  'attribute' => 'initials',
-                ],
-                [
-                  'label' => 'P/P/N',
-                  'attribute' => 'price_per_night',
+                  'label' => 'Precio',
+                  'attribute' => 'price',
                 ],
 
                 [
@@ -38,7 +35,7 @@
                     'label' => '',
                     'class' => 'yii\grid\DataColumn', 
                     'value' => function ($data) {
-                    	$edit = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/editar-tipo/?id=$data->id' title='Editar Habitación'><i class='fas fa-pencil-alt'></i></a>";
+                    	$edit = "<a class='btn btn-outline-dark btn-sm' href='/habitacion/editar-servicio/?id=$data->id' title='Editar Servicio'><i class='fas fa-pencil-alt'></i></a>";
                     	$delete = "<a class='btn btn-outline-danger btn-sm' href='/habitacion/borrar/?id=$data->id' title ='Eliminar Habitación' data-confirm='¿Estás seguro de que desea elimianr esta habitación?' data-pjax='0' data-method='post'><i class='fas fa-trash'></i></a>";
 
                     	return "$edit";
