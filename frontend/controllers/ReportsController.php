@@ -30,15 +30,20 @@ class ReportsController extends \yii\web\Controller
     
     public function actionIndex()
     {
-        return $this->render('index');
+        $gestion = new Gestion();
+        return $this->render('index', [
+            'fecha' => $gestion->getFecha(),
+        ]);
     }
 
     public function actionRack(){
+
     	$model = Room::find()->orderBy(['room_number' => SORT_ASC])->all();
     	$status = RoomStatus::find()->all();
+
         return $this->render('rack',[
         	'model' => $model,
-        	'status' => $status,
+            'status' => $status,
         ]);
 
     }

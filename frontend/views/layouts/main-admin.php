@@ -98,7 +98,7 @@ AppAsset::register($this);
                   <li class="nav-item">
                     <a class="nav-link text-dark" href="#">
                       <i class="fas fa-circle fa-sm text-primary"></i>
-                      Ver reservaciones
+                      Reservaciones
                     </a>
                   </li>
             </ul>
