@@ -25,7 +25,8 @@ class AppAsset extends AssetBundle
         'js/jquery.min.js',
         'js/select2.min.js',
         'js/sweetalert.min.js',
-        'js/main.js?v=1',
+        'js/jquery.mask.min.js',
+        'js/main.js?v=2',
         'js/calendar.js',
     ];
     public $depends = [

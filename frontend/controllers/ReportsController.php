@@ -6,12 +6,14 @@ use Yii;
 use frontend\models\Room;
 use frontend\models\RoomStatus;
 use yii\filters\VerbFilter;
+use common\models\Gestion;
 
 class ReportsController extends \yii\web\Controller
 {
 	public function behaviors()
     {
-        $this->checkLogin();
+        $gestion = new Gestion();
+        $gestion->checkLogin();
         $this->layout = '@app/views/layouts/main-admin';
         $user = Yii::$app->user->identity;;
         return [
@@ -25,11 +27,7 @@ class ReportsController extends \yii\web\Controller
     }
 
 
-    public function checkLogin(){
-        if (Yii::$app->user->isGuest) {
-            return $this->redirect(['/site']);
-        }
-    }
+    
     public function actionIndex()
     {
         return $this->render('index');

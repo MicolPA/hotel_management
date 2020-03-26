@@ -18,6 +18,12 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  * @property string|null $verification_token
+ * @property string|null $photo_url
+ * @property string|null $name
+ * @property string|null $last_name
+ * @property string|null $identity
+ * @property string|null $phone
+ * @property string|null $address
  *
  * @property Client[] $clients
  * @property Invoice[] $invoices
@@ -43,8 +49,9 @@ class User extends \yii\db\ActiveRecord
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['status', 'role_id', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
+            [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token', 'address'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
+            [['name', 'last_name', 'identity', 'phone'], 'string', 'max' => 50],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
@@ -69,6 +76,11 @@ class User extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'verification_token' => 'Verification Token',
+            'photo_url' => 'Photo Url',
+            'name' => 'Name',
+            'last_name' => 'Last Name',
+            'identity' => 'Identity',
+            'phone' => 'Phone',
         ];
     }
 

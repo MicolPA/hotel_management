@@ -1,5 +1,7 @@
 
 $(".select2").select2();
+$("#identity").mask('000-0000000-0');
+$("#phone").mask('000-000-0000');
 
 function addReserva(n){
 

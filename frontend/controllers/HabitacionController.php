@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\VerbFilter;
 use frontend\models\Room;
 use frontend\models\RoomType;
+use common\models\Gestion;
 use frontend\models\Services;
 use yii\web\UploadedFile;
 use yii\data\ActiveDataProvider;
