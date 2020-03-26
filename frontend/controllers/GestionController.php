@@ -38,10 +38,13 @@ class GestionController extends \yii\web\Controller
     	$id = $id?$id:Yii::$app->user->identity->id;
     	$model = User::findOne($id);
     	if ($model->load($post = Yii::$app->request->post())) {
-    		$model->photo_url = UploadedFile::getInstance($model, 'photo_url');
-            $imagen = "images/users/" . strtolower($model->username) . "-profile_foto-" . date("Y-m-d") . "." . $model->photo_url->extension;
-            $model->photo_url->saveAs($imagen);
-            $model->photo_url = $imagen;
+    		
+    		if (isset($model->photo_url->extension)) {
+    			$model->photo_url = UploadedFile::getInstance($model, 'photo_url');
+            	$imagen = "images/users/" . strtolower($model->username) . "-profile_foto-" . date("Y-m-d") . "." . $model->photo_url->extension;
+            	$model->photo_url->saveAs($imagen);
+           	 	$model->photo_url = $imagen;
+    		}
     		$model->save();
             Yii::$app->session->setFlash('success1', "Información actualizada correctamente");
     		return $this->redirect(['perfil', 'id' => $id]);
