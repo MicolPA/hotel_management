@@ -58,7 +58,7 @@ AppAsset::register($this);
                   <a href="/gestion/perfil" class="btn btn-pink btn-sm btn-block mt-2">Ver Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-dark" href="/reports/rack">
+                <a class="nav-link active text-dark" href="/reports/">
                   <i class="fas fa-home text-pink"></i>
                   Inicio <span class="sr-only">(current)</span>
                 </a>
@@ -136,19 +136,19 @@ AppAsset::register($this);
             <?= $this->render('_alertas'); ?>
           </div>
 
-            
+        <footer class="footer">
+          <div class="container">
+            <p class="pull-left font-weight-light">&copy; Sporca's Production <?= date('Y') ?></p>
+
+            <!-- <p class="pull-right"><?//= Yii::powered() ?></p> -->
+          </div>
+        </footer>
         </main>
       </div>
     </div>
 </div>
 
-<footer class="footer ">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'css/fontawesome.min.css',
         'css/select2.min.css',
         'css/calendar.css',
+        'css/chart.min.css',
         // 'css/uikit.min.css',
     ];
     public $js = [
@@ -28,6 +29,7 @@ class AppAsset extends AssetBundle
         'js/jquery.mask.min.js',
         'js/main.js?v=2',
         'js/calendar.js',
+        'js/chart.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
