@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\Models\Gestion;
-use frontend\Models\User;
+use common\models\Gestion;
+use frontend\models\User;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
