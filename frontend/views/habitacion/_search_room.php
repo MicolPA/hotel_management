@@ -28,7 +28,7 @@ use yii\bootstrap\ActiveForm;
 	    </div>
 	    
 	    <div class="col-md-2 form-group" style="padding-top: 2rem">
-	        <?= Html::submitButton('Búscar', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+	        <?= Html::submitButton('Búscar', ['class' => 'btn btn-primary btn-sm', 'name' => 'login-button']) ?>
 	    </div>
     </div>
 

@@ -23,14 +23,14 @@ use yii\bootstrap\ActiveForm;
 	    <div class="col-md-6">
 	    	<label>Precio</label>
 	    	<div class="input-group">
-			  <input type="number" class="form-control" name="price" value="<?= $model->price ?>" required>
+			  <input type="number" class="form-control" name="price" value="<?= $model->price ?>">
 			  <div class="input-group-append">
 			    <span class="input-group-text">$</span>
 			  </div>
 			</div>
 	    </div>
 	    <div class="col-md-12">
-	    	<?= $form->field($model, 'description')->textarea(['rows' => 4, 'required' => 'required'])->label('Descripción del servicio') ?>
+	    	<?= $form->field($model, 'description')->textarea(['rows' => 4])->label('Descripción del servicio') ?>
 	    </div>
 	    
 

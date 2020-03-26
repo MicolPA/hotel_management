@@ -144,4 +144,24 @@ a.desc:after {
     left: 100px;
     top:0px
 }
+.table thead th{
+    background: #343a40 !important;
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+ }
 
+.table thead th a{
+    color: white;
+}
+
+ .table td{
+    font-size: 14px;
+ }
+
+ label{
+    font-size: 14px
+ }
+ select, input{
+    font-size: 12px !important;
+ }

@@ -47,7 +47,7 @@ AppAsset::register($this);
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar pt-2" style="height: 90vh">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar pt-2 position-fixed" style="height: 100vh">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item border-bottom pb-2 text-center pt-2 mb-3" style="background: #fafafa">
@@ -92,7 +92,7 @@ AppAsset::register($this);
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/reservacion/crear">
                       <i class="fas fa-circle fa-sm text-primary"></i>
-                      Hacer reservación
+                      Nueva reserva
                     </a>
                   </li>
                   <li class="nav-item">
