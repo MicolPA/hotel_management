@@ -54,7 +54,7 @@ AppAsset::register($this);
                 <div class="rounded-circle m-auto" style="width: 80px;height:80px;background-image: url(/<?= Yii::$app->user->identity->photo_url ?>);background-size: cover;">
                   <!-- <img src="/<?//= Yii::$app->user->identity->photo_url ?>" width='100%'> -->
                 </div>
-                  <p class="h6 mb-0 mt-2 font-weight-light">Hola, Micol Peralta</p>
+                  <p class="h6 mb-0 mt-2 font-weight-light">Hola, <?= Yii::$app->user->identity->name . " " . Yii::$app->user->identity->last_name ?> </p>
                   <a href="/gestion/perfil" class="btn btn-pink btn-sm btn-block mt-2">Ver Perfil</a>
               </li>
               <li class="nav-item">
