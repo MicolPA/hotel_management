@@ -2,11 +2,6 @@
 	use dosamigos\chartjs\ChartJs;
  ?>
 
-<style>
-	canvas{
-		width: 100% !important
-	}
-</style>
 <div class="row">
 	<div class="col-md-12">
 		<h2 class="h2 font-weight-bold text-primary"><?= $fecha ?> <a href="" class="btn float-right btn-pink btn-sm mt-2">Nueva Reserva</a></h2>
@@ -90,8 +85,9 @@
 	<div class="col-md-6 pt-5">
 		<?= ChartJs::widget([
 		    'type' => 'doughnut',
+		    'id' => 'structure',
 		    'options' => [
-		        'height' => 200,
+		        'height' => 250,
 		        'width' => 400
 		    ],
 		    'data' => [
@@ -103,7 +99,7 @@
 		                'position' => 'top',
 		                'backgroundColor' => ['#20c997','#1eb2a6','#dc3545'],
 		                'borderColor' =>  '#fafafa',
-		                'borderWidth' => 1,
+		                'borderWidth' => false,
 		                'hoverBorderColor'=>["#999","#999","#999"],  
 		            ],
 		            
