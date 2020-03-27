@@ -91,8 +91,8 @@
 		<?= ChartJs::widget([
 		    'type' => 'doughnut',
 		    'options' => [
-		        'height' => 150,
-		        'width' => '70%'
+		        'height' => 200,
+		        'width' => 400
 		    ],
 		    'data' => [
 		        'labels' => ['Disponibles','Reservadas','Bloqueadas'],
@@ -125,7 +125,7 @@
 		        'hover' => [
 		            'mode' => true,
 		        ],
-		        'maintainAspectRatio' => false,
+		        // 'maintainAspectRatio' => false,
 
 		    ],
 		]);
