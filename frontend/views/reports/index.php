@@ -8,49 +8,49 @@
 		<hr>
 	</div>
 </div>
-<div class="row mb-4">
+<div class="row mb-5">
 	<div class="col-md-4">
-		<div class="border shadow border-pink pl-4 pt-3 pr-4 pb-3 text-success text-white">
+		<div class="border shadow border-pink pl-4 pt-2 pr-4 pb-2 text-success text-white">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<span class="h6 font-weight-light text-dark">In House</span>
 					<p class="h1 font-weight-bold">15</p>
 				</div>
-				<div class="col-md-7 text-right">
-					<i class="fas fa-concierge-bell display-3"></i>
+				<div class="col-md-6 text-right pt-3">
+					<i class="fas fa-concierge-bell h1"></i>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="border shadow border-pink pl-4 pt-3 pb-3 pr-4 text-primary text-white">
+		<div class="border shadow border-pink pl-4 pt-2 pr-4 pb-2 text-primary text-white">
 			<div class="row">
-				<div class="col-md-5">
-					<span class="h6 font-weight-light text-dark">Llegada</span>
+				<div class="col-md-6">
+					<span class="h6 font-weight-light text-dark">Llegadas</span>
 					<p class="h1 font-weight-bold">6</p>
 				</div>
-				<div class="col-md-7 text-right">
-					<i class="fas fa-sign-in-alt display-3"></i>
+				<div class="col-md-6 text-right pt-3">
+					<i class="fas fa-sign-in-alt h1"></i>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
-		<div class="border shadow border-pink pl-4 pt-3 pb-3 pr-4 text-danger text-white">
+		<div class="border shadow border-pink pl-4 pt-2 pr-4 pb-2 text-danger text-white">
 			<div class="row">
-				<div class="col-md-5">
-					<span class="h6 font-weight-light text-dark">Salida</span>
+				<div class="col-md-6">
+					<span class="h6 font-weight-light text-dark">Salidas</span>
 					<p class="h1 font-weight-bold">4</p>
 				</div>
-				<div class="col-md-7 text-right">
-					<i class="fas fa-sign-out-alt display-3"></i>
+				<div class="col-md-6 text-right pt-3">
+					<i class="fas fa-sign-out-alt h1"></i>
 				</div>
 			</div>
 		</div>
 	</div>	
 </div>
 
-<div class="row mt-4">
+<div class="row mt-5">
 	<div class="col-md-6">
 		<p class="h4 font-weight-light mb-4 mt-2"><i class="fas fa-chart-line text-pink"></i> Gráficos de Ocupación</p>
 		<?= ChartJs::widget([
@@ -87,7 +87,7 @@
 		    'type' => 'doughnut',
 		    'id' => 'structure',
 		    'options' => [
-		        'height' => 250,
+		        'height' => 200,
 		        'width' => 400
 		    ],
 		    'data' => [
